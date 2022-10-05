@@ -1,0 +1,46 @@
+.cards {
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__thumbnail {
+    margin: 0;
+    > img {
+      width: 100%;
+    }
+  }
+
+  &__item {
+    background: white;
+    margin-bottom: 4rem;
+    @media only screen and (min-width: 60rem) {
+      flex: 0 1 calc(50% - 5em);
+    }
+  }
+
+  &__desc {
+    padding: 0 1.5rem;
+    // height: 17rem;
+  }
+
+  &__ingredients {
+    padding: 1.5rem 1.5rem;
+    ul {
+      @media only screen and (min-width: 60rem) {
+        columns: 2;
+      }
+    }
+  }
+
+  &__title {
+    background: #5d8a2b;
+    color: #fff;
+    text-align: center;
+    padding: 0.5rem;
+    > p {
+      margin: 0;
+    }
+  }
+}

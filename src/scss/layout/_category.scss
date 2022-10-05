@@ -1,0 +1,65 @@
+@use '../util' as u;
+
+.category {
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    padding: 44px 0 30px;
+  }
+
+  .sticky{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    background-color:#fff;
+    padding: u.rem(20);
+  }
+
+   &__links {
+    display: grid;
+    margin: 0 auto;
+    text-align: center;
+    grid-template-columns: auto auto auto;
+    width: 789px;
+    height: auto;
+    padding: 0px;
+    grid-gap: 15px;
+    grid-template-columns: repeat(8, 1fr);
+    button {
+      border: none;
+      width: 100%;
+      white-space: nowrap;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 21px;
+      text-transform: uppercase;
+      color: #383838;
+      background-color: transparent;
+      &.active {
+        color: var(--teriary-background-color);
+        font-weight: 700;
+      }
+      &:hover {
+        color: var(--teriary-background-color);
+        transition: 0.5s;
+      }
+    }
+
+
+
+    @include u.breakpoint-down(medium) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include u.breakpoint-down(small) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include u.breakpoint-down(xsmall) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}
